@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {HashRouter} from 'react-router-dom';
+import routes from "./routes";
 import './App.css';
+import Home from './Components/Home/Home';
+import CharacterForm from './Components/CharacterForm/CharacterForm';
+import Nav from './Components/Nav/Nav';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      cardsArray: []
+    }
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <HashRouter>
+        <div className="App">
+        <Nav />
+        {routes}
+        </div>
+      </HashRouter>
     );
   }
 }
