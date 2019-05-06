@@ -198,3 +198,66 @@
 //         res.status(300).send(cards[cardid - 1]);
 //     }
 // }
+
+
+module.exports = {
+    pathway: (req, res) => {
+        const db = req.app.get("db");
+        // console.log("pathway: ", req.body);
+        const {choice} = req.body;
+        db.pathway([req.session.user.id, [choice]]).then(thePathway => {
+            // console.log("game pathway: ", thePathway);
+            res.status(200).send(thePathway);
+        })
+    },
+    pathwaylist: (req, res) => {
+        const db = req.app.get("db");
+        console.log("pathway history: ", req.body.choice)
+        console.log("session information: ", req.session.user.id);
+        
+        db.getHistory([req.session.user.id]).then(response => { 
+            console.log("before push: ",response)
+            response[0].history.push(req.body.choice);
+            console.log("after push: ",response[0]);
+            db.updatePathway([response[0].history, req.session.user.id])
+            // must res.status(200).send(the correct thing) or else you'll dun goof silly
+            // to trigger front end .then
+            res.status(200).send(response);
+        })
+    },
+
+    finishGame: (req, res) => {
+        const db = req.app.get("db");
+        console.log("pathway history: ", req.body.choice)
+        console.log("session information: ", req.session.user.id);
+        
+        db.getHistory([req.session.user.id]).then(response => { 
+            console.log("before push: ",response)
+            response[0].history.push(req.body.choice);
+            console.log("after push: ",response[0]);
+            db.finishGame([response[0].history, req.session.user.id])
+            // must res.status(200).send(the correct thing) or else you'll dun goof silly
+            // to trigger front end .then
+            res.status(200).send(response);
+        })
+    },
+
+    getPathwaylist: (req, res, next) => {
+        const db = req.app.get("db");
+        db.getHistory([req.session.user.id]).then(response => {
+            res.status(200).send(response);
+        })
+    },
+    deleteGame: (req, res) => {
+        const db = req.app.get("db");
+        console.log('delete req.body: ', req.body, "req.session.user.id", req.session.user.id, "req.session", req.session)
+        db.getHistory([req.session.user.id]).then(response => {
+            console.log("response: ", response);
+            db.deleteTheGame([req.session.user.id]).then(theResponse => {
+                console.log('theResponse: ', theResponse);
+            }) 
+        })
+        console.log()
+        
+    }
+}

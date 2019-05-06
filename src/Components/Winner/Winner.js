@@ -9,8 +9,8 @@ class Winner extends Component {
             Congratulations on staying alive! You kept the kitties happy enough!
         </h3>
 
-        <button><a href="#/">Go home!</a></button>
-        {/* <button><a href="#/history">View game history</a></button> */}
+        <button><a href="/">Go home!</a></button>
+        <button><a href="/pathway">View game history</a></button>
 
       </div>
     );

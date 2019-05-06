@@ -26,7 +26,7 @@ class SignUp extends Component {
     return (
       <div className="SignUp">
         <h1>Sign Up</h1>
-        <h3>Already have a username? Log in here: <button><a href="#/login">Log in here:</a></button></h3>
+        <h3>Already have a username? Log in here: <button><a href="/login">Log in here:</a></button></h3>
     
         <h3>Sign up here:</h3>
         <div>
@@ -72,7 +72,7 @@ class SignUp extends Component {
         </div>
         
         <div><button onClick = {this.signup}>Sign Up</button></div>
-        <div><button><a href="#/startgame">Start Game</a></button></div>
+        <div><button><a href="/character">Create a character</a></button></div>
       </div>
     );
   }

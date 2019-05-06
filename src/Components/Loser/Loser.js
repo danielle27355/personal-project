@@ -9,8 +9,8 @@ class Loser extends Component {
             I am sorry, the kitties ate you. Better luck next time. 
         </h3>
 
-        <button><a href="#/">Go home!</a></button>
-        {/* <button><a href="#/history">View game history</a></button> */}
+        <button><a href="/">Go home!</a></button>
+        <button><a href="/pathway">View game history</a></button>
 
       </div>
     );

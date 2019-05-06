@@ -16,6 +16,7 @@ module.exports = {
                         db.createUser([userName, hashedPassword, fullName, email]).then(user => {
                             console.log(user);
                             req.session.user = {
+                                id: user[0].id,
                                 userName: user[0].username,
                                 fullName: user[0].fullname
                             }
@@ -37,6 +38,7 @@ module.exports = {
             if(user[0]){
                 if(result){
                     req.session.user = {
+                        id: user[0].id,
                         username: user[0].username,
                         fullname: user[0].fullname
                     }

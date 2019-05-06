@@ -43,7 +43,7 @@ class LogIn extends Component {
                 /> 
 
         <div><button onClick = {this.login}>Log In</button></div>
-        <div><button><a href="#/startgame">Start Game</a></button></div>
+        <div><button><a href="/character">Create a character</a></button></div>
 
       </div>
 

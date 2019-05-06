@@ -20,11 +20,12 @@ class Start extends Component {
             You are a human and on your way to get a wonderful Chocolate Catpuccino from Kitties and Coffee. You arrive to the cafe on what appears to be nothing but an average day. 
         </h3>
 
-        <button><a href="#/1">Next</a></button>
+        <button><a href="/1">Next</a></button>
 
       </div>
     );
   }
+
 }
 
 export default Start;

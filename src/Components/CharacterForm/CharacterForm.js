@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import "./CharacterForm.css";
+import axios from "axios";
 
 export class CharacterForm extends Component{
     constructor(){
@@ -14,6 +15,8 @@ export class CharacterForm extends Component{
         this.handleChangeEmotions = this.handleChangeEmotions.bind(this);
         this.handleChangeDemeanor = this.handleChangeDemeanor.bind(this);
         this.handleChangeSocial = this.handleChangeSocial.bind(this);
+
+        this.createCharacter = this.createCharacter.bind(this);
     }
 
     handleChangeEmotions(event){
@@ -24,6 +27,13 @@ export class CharacterForm extends Component{
     }
     handleChangeSocial(event){
         this.setState({social: event.target.value});
+    }
+
+    createCharacter(){
+        let {fullName, emotions, demeanor, social} = this.state;
+        axios.post("/character", {fullName, emotions, demeanor, social}).then(res => {
+            console.log(res.data)
+        })
     }
 
 
@@ -70,8 +80,9 @@ export class CharacterForm extends Component{
                 </select>
                 </div>
                 <div>
-                    <button><a href="/#/startgame">Start Game!</a></button>
-                    {/* <button><a href="#/kitties">View Kitty Pictures</a></button> */}
+                    <button onClick = {this.createCharacter}>Submit character</button>
+                    <button><a href="/startgame">Start Game!</a></button>
+                    {/* <button><a href="/kitties">View Kitty Pictures</a></button> */}
                 </div>                   
             </div>
         )

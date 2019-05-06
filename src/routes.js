@@ -4,9 +4,11 @@ import Home from "./Components/Home/Home";
 import CharacterForm from './Components/CharacterForm/CharacterForm';
 import Start from './Components/GamePages/Start';
 import Kitties from './Components/Kitties/Kitties';
-import Donate from './Components/Donate/Donate';
+import PayToWin from './Components/PayToWin/PayToWin';
 import SignUp from './Components/Authentication/SignUp.js'
 import LogIn from './Components/Authentication/LogIn.js'
+
+import Pathway from './Components/GameHistory/Pathway.js'
 
 import One from './Components/GamePages/FirstStep/One.js';
 
@@ -55,7 +57,7 @@ export default (
         {/* Home screen */}
         <Route path="/character" component={CharacterForm} />
         <Route path="/kitties" component={Kitties} />
-        <Route path="/donate" component={Donate} />
+        <Route path="/paytowin" component={PayToWin} />
 
         {/* Log In */}
         <Route path="/signup" component={SignUp} />
@@ -105,9 +107,12 @@ export default (
          <Route path="/30" component={Thirty} />
          <Route path="/31" component={Thirtyone} /> */}
 
+         {/* Game  Outcome */}
         <Route path="/winner" component={Winner} />
         <Route path="/loser" component={Loser} />
 
+        {/* Game History */}
+        <Route path="/pathway" component={Pathway} />
 
     </Switch>
 )
