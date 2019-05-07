@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import StripeCheckout from 'react-stripe-checkout';
 import axios from "axios";
-// import "./Donate.css";
+import "./PayToWin";
 
 export default class Checkout extends React.Component {
     onToken = ""

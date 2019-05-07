@@ -10,7 +10,7 @@ module.exports = {
 
   client.messages
     .create({
-      body: "Steeeeeeeeeeve",
+      body: "Here's the cheatz",
       from: '+19893416601',
       to: cellNumber
     })

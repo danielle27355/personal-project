@@ -25,7 +25,7 @@ class SignUp extends Component {
   render() {
     return (
       <div className="SignUp">
-        <h1>Sign Up</h1>
+        <h1></h1>
         <h3>Already have a username? Log in here: <button><a href="/login">Log in here:</a></button></h3>
     
         <h3>Sign up here:</h3>

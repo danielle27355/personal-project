@@ -7,9 +7,15 @@ class Nav extends Component {
   render() {
     return (
       <div className="Nav">
-       <ul>
+       <ul class="resNav">
            <li>
                <Link to="/">Home</Link>
+           </li>
+           <li>
+               <Link to="/kitties">View dank cat memes</Link>
+           </li>
+           <li>
+               <Link to="/paytowin">PaY t0 w1n!!!</Link>
            </li>
            {/* <li>
                <Link to="/donate">Donate</Link>

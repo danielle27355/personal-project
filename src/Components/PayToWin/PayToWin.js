@@ -51,7 +51,7 @@ export default class PayToWin extends Component {
           <h1>
             Pay to win!
               <div>
-                DONATE: $10
+                $10 to get yourself some cheat codes
               </div>
           </h1>
         </div>

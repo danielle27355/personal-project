@@ -242,22 +242,22 @@ module.exports = {
         })
     },
 
-    getPathwaylist: (req, res, next) => {
+    getPathwaylist: (req, res) => {
         const db = req.app.get("db");
-        db.getHistory([req.session.user.id]).then(response => {
+        db.getAllHistory([req.session.user.id]).then(response => {
             res.status(200).send(response);
         })
     },
-    deleteGame: (req, res) => {
+    deleteGame: (req, res, next) => {
         const db = req.app.get("db");
         console.log('delete req.body: ', req.body, "req.session.user.id", req.session.user.id, "req.session", req.session)
-        db.getHistory([req.session.user.id]).then(response => {
-            console.log("response: ", response);
-            db.deleteTheGame([req.session.user.id]).then(theResponse => {
+        // db.getHistory([req.session.user.id]).then(response => {
+        //     console.log("response: ", response);
+            db.deleteTheGame([req.params.id, req.session.user.id]).then(theResponse => {
                 console.log('theResponse: ', theResponse);
-            }) 
-        })
-        console.log()
+                res.status(200).send(theResponse);
+            })
+    //    })
         
     }
 }

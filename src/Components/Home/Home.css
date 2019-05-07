@@ -1,3 +1,25 @@
-body{
-    background-color: lightpink;
+
+a {
+    text-decoration: none;
+    color: black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
+
+h1 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+h3 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+button{
+    font-size: 20px;
+}
+
+img {
+    width: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+

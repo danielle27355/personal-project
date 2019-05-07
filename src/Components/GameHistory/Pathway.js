@@ -20,7 +20,7 @@ class Pathway extends Component {
     console.log("this is the deleteHistory method")
     axios.delete(`/pathwaylist${id}`).then(res => {
       console.log("pathway: deleteHistory: res.data ", res.data);
-
+      this.setState({history: res.data})
     })
   }
 
@@ -32,11 +32,11 @@ class Pathway extends Component {
     console.log("this.state: ", this.state)
       let {history} = this.state;
       let mappedHistory = history.map(theHistory =>{
-        console.log(theHistory)
+        console.log("theHistory: ", theHistory)
       return(
         <div key={theHistory.user_id}>
           <h4>History: {theHistory.history}</h4>
-          <button onClick={this.deleteHistory}>Delete a game </button>
+          <button onClick={() => this.deleteHistory(theHistory.id)}>Delete a game </button>
         </div>
       )
     })
