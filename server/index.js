@@ -41,7 +41,7 @@ app.use(session({
 //Post
 app.route("/auth/signup").post(ac.signup);
 app.route("/auth/login").post(ac.login);
-app.route("/character").post(cc.createCharacter);
+app.route("/character").post(cc.createCharacter); 
 
 //Read
 // app.route("/pathwaylist").get(gc.pathwaylist);

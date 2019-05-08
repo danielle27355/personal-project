@@ -6,6 +6,14 @@ ul {
     background-color: black;
   }
 
+  a:hover {
+    color: lightblue;
+  }
+
+  li:hover {
+    background-color: white;
+  }
+
   ul li {
     text-align: center;
     float:left;
@@ -14,13 +22,56 @@ ul {
   ul li a {
     display: block;
     color: white;
-    text-align: center;
+    text-align: left;
     padding: 18px 20px;
     text-decoration: none;
     font-size: 20px;
   }
 
-  @media screen and (max-width: 600px) {
-    ul.topnav li.right, 
-    ul.topnav li {float: none;}
+  @media only screen and (min-width: 800px) and (max-width: 1000px) {
+    body {
+      background-color: #bc69be;
+    }
+    a:hover {
+      color: #bc69be;
+    }
+    ul li a {
+      font-size: 15px;
+    }
   }
+  @media only screen and (min-width: 600px) and (max-width: 800px) {
+    body {
+      background-color: rgb(230, 173, 178);
+    }
+    a:hover {
+      color: rgb(230, 173, 178);
+    }
+    ul li a {
+      font-size: 15px;
+    }
+  }
+
+  @media only screen and (min-width: 400px) and (max-width: 600px) {
+    body {
+      background-color: rgb(134, 255, 195);
+    }
+    a:hover {
+      color: rgb(134, 255, 195);
+    }
+    ul li a {
+      font-size: 15px;
+    }
+  }
+  @media only screen and (min-width: 200px) and (max-width: 400px) {
+    body {
+      background-color: rgb(255, 217, 134);
+    }
+    a:hover {
+      color: rgb(255, 217, 134);
+    }
+    ul li a {
+      font-size: 15px;
+    }
+  }
+ 
+  

@@ -16,22 +16,25 @@ class One extends Component {
         else{
           this.props.history.push("/3");
         }
-      })
+      }) 
     }
 
   render() {
     console.log("1: this.props: ",this.props);
     return (
       <div className="One">  
-        <h3> 
-            This is the first decision to make
+        <h3>
+            Your toes are in a lot of pain from the kitty biting your poor toes. But just look at the cute little fluffy tail and those vicious eyes. This kitty is just so adorable. What you want to do? 
+
+            Shoe the kitty away or take the pain? 
+            (First)
         </h3>
 
         {/* <a href="#/2"></a> */}
-        <button onClick = {this.saveHistory} value = "1A" >Do the thing</button>
+        <button onClick = {this.saveHistory} value = "1A" >Shoe the kitty away</button>
         {/* <button><a href="/2">Next</a></button> */}
         {/* <a href="#/3"></a> */}
-        <button onClick = {this.saveHistory} value = "1B">Do the other thing</button>
+        <button onClick = {this.saveHistory} value = "1B">Accept the pain</button>
 
       </div>
     );

@@ -10,7 +10,7 @@ class Home extends Component {
         <h1>Welcome to Kitten Annihil@tion!1!!</h1>
         
         <div class="responsive">
-          <img src={angryKitty} alt="angry-home-kitty" width="500"/>
+          <img src={angryKitty} alt="angry-home-kitty" width="300"/>
           
         </div>
         <h3>Don't let the kitties annihil@te you!!11!</h3>

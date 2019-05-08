@@ -59,25 +59,33 @@ export class CharacterForm extends Component{
                 />
 
                 <div>
+                    <div>
+                <label>Emotional Peronsality:</label>
                 <select className="emotions" value={this.state.emotions} onChange={this.handleChangeEmotions}>
-
                     <option></option>
                     <option>Broken</option>
                     <option>Happy</option>
                     <option>Content</option>
                 </select>
+                </div>
+                <div>
+                <label>Demeanor:</label>
                 <select className="demeanor" value={this.state.demeanor} onChange={this.handleChangeDemeanor}>
                     <option></option>
                     <option>Relaxed</option>
                     <option>Cheerful</option>
                     <option>Gloomy</option>
                 </select>
+                </div>
+                <div>
+                <label>Social Personality:</label>
                 <select className="social" value={this.state.social} onChange={this.handleChangeSocial}>
                     <option></option>
                     <option value="Talkative">Talkative</option>
                     <option value="Average">Average</option>
                     <option value="Quiet">Quiet</option>
                 </select>
+                </div>
                 </div>
                 <div>
                     <button onClick = {this.createCharacter}>Submit character</button>

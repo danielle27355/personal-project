@@ -12,7 +12,7 @@ class Three extends Component {
         console.log("3: this includes: 3A");
         this.props.history.push("/6");
         console.log("did it work?");
-      }
+      } 
       else{
         console.log("3: this includes: 3B");
         this.props.history.push("/7");
@@ -25,7 +25,11 @@ class Three extends Component {
     return (
       <div className="Three">  
         <h3>  
-            This is the second decision to make
+          You decided to shoe the kitty away and that made him very, very angry. This little kitty hops up onto the table and pees into your coffee. You're not too angry about this incident, but you are a little sad. You either decide that you will try to make the kitty happy by giving him some treats or you will just cry like the big baby everyone knows you are. 
+          
+          What do you want to do?
+          (Second)
+          
         </h3>
 
         {/* <button><a href="/6">Do the thing</a></button> */}

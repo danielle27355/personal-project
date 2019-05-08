@@ -9,16 +9,18 @@ h1 {
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
 h3 {
+
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
+
 
 button{
     font-size: 20px;
 }
 
 img {
-    width: 50%;
-    height: auto;
+    width: 25%;
+    height: 50%;
     margin-left: auto;
     margin-right: auto;
 }
