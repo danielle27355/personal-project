@@ -3,4 +3,27 @@ h2 {
 }
 label {
     font-family: "Comic Sans MS", cursive, sans-serif;
-}
+} 
+
+@media only screen and (max-width: 600px) {
+    h2{
+        font-size: 25px;
+    }
+    h3{
+        font-size: 25px;
+    }
+   label{
+       text-align: center;
+       font-size: 30px;
+   }
+    input{
+        text-align: center;
+        font-size: 25px;
+        display: block;
+        margin: 0 auto;
+    }
+    button{
+        margin: 5px;
+        font-size: 25px;
+    }
+  }

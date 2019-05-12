@@ -8,6 +8,7 @@ require("dotenv").config();
 const ac = require("../server/controller/authController.js")
 const ic = require("./controller/infoController.js")
 const app = express();
+// var cloudinary = require('cloudinary').v2;
 
 app.use(express.json());
 app.use( express.static( `${__dirname}/../build` ) );
@@ -81,15 +82,15 @@ app.post("/stripe", (req,res) => {
     });
 })
 
+
+// cloudinary.uploader.upload("my_image.jpg", function(error, result) {console.log(result, error)});
+
+
   app.route('/phoneNumber').post(ic.takeNum);
 
-
-
-
-
-  const path = require('path')
-  app.get('*', (req, res)=>{
-    res.sendFile(path.join(__dirname, '../build/index.html'));
-  })
+  // const path = require('path')
+  // app.get('*', (req, res)=>{
+  //   res.sendFile(path.join(__dirname, '../build/index.html'));
+  // })
 
 app.listen(SERVER_PORT, () => {console.log(`listening on port ${SERVER_PORT}`)})

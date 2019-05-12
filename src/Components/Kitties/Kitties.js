@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import "./Kitties.css";
-import { createRequireFromPath } from 'module';
+
+//var cloudinary = require('cloudinary');
 // const dank1 = "s3://danielle27355-kitties/dank1.jpg";
 const dank2 = "https://i.imgur.com/4V1ZGtW.jpg";
 

@@ -7,7 +7,7 @@ class Pathway extends Component {
     super();
     this.state = {
       history: []
-    }
+    } 
   }
 
   getHistory(){
