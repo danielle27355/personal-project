@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import {Link} from "react-router-dom";
 import "./CharacterForm.css";
 import axios from "axios";
+import {connect} from "react-redux";
+import {setCharacter} from "../../ducks/reducer"
 
 export class CharacterForm extends Component{
     constructor(){
@@ -15,7 +16,6 @@ export class CharacterForm extends Component{
         this.handleChangeEmotions = this.handleChangeEmotions.bind(this);
         this.handleChangeDemeanor = this.handleChangeDemeanor.bind(this);
         this.handleChangeSocial = this.handleChangeSocial.bind(this);
-
         this.createCharacter = this.createCharacter.bind(this);
     }
 
@@ -33,9 +33,15 @@ export class CharacterForm extends Component{
         let {fullName, emotions, demeanor, social} = this.state;
         axios.post("/character", {fullName, emotions, demeanor, social}).then(res => {
             console.log(res.data)
+            this.props.setCharacter(res.data)
+        })
+    } 
+    displayUserCharacters(){
+        axios.get("/characterlist").then(res =>{
+            console.log(res.data)
+            this.displayUserCharacter(res.data)
         })
     }
-
 
     render(){
         let {fullName, emotions, demeanor, social} = this.state;
@@ -90,11 +96,20 @@ export class CharacterForm extends Component{
                 <div>
                     <button onClick = {this.createCharacter}>Submit character</button>
                     <button><a href="/startgame">Start Game!</a></button>
-                    {/* <button><a href="/kitties">View Kitty Pictures</a></button> */}
                 </div>                   
             </div>
         )
     }
 }
 
-export default CharacterForm;
+let mapStateToProps = state => {
+    return{
+        character: state.character 
+    }
+}
+
+let mapDispatchToProps = {
+    setCharacter
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CharacterForm);

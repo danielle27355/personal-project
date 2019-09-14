@@ -46,6 +46,7 @@ app.route("/character").post(cc.createCharacter);
 
 //Read
 // app.route("/pathwaylist").get(gc.pathwaylist);
+// app.route("/characterlist").get.
 
 //Put
 app.route("/pathway").put(gc.pathway);

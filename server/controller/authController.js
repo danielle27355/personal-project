@@ -17,7 +17,7 @@ module.exports = {
                             console.log(user);
                             req.session.user = {
                                 id: user[0].id,
-                                userName: user[0].username,
+                                username: user[0].username,
                                 fullName: user[0].fullname
                             }
                             res.status(200).send(req.session.user);

@@ -39,7 +39,7 @@ class Pathway extends Component {
           <button onClick={() => this.deleteHistory(theHistory.id)}>Delete a game </button>
         </div>
       )
-    })
+    }) 
     return (
       <div className="Pathway">  
         <h3>  

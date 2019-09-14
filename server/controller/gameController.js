@@ -241,7 +241,10 @@ module.exports = {
             res.status(200).send(response);
         })
     },
-
+    getCharacterList: (req,res) => {
+        const db = req.app.get("db");
+        db.user_join([req.session.user.id])
+    },
     getPathwaylist: (req, res) => {
         const db = req.app.get("db");
         db.getAllHistory([req.session.user.id]).then(response => {

@@ -1,5 +1,11 @@
+.resNav{
+  margin-top: -20px;
+
+}
+
 ul {
     list-style-type: none;
+    
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -38,6 +44,7 @@ ul {
     ul li a {
       font-size: 15px;
     }
+
   }
   @media only screen and (min-width: 600px) and (max-width: 800px) {
     body {

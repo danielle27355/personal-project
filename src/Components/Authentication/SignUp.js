@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import axios from 'axios';
 // import "./SignUp.css";
 
+// connecting to the store
+import {connect} from "react-redux";
+import {setUser} from '../../ducks/reducer';
+
 class SignUp extends Component {
   constructor(){
     super();
@@ -18,11 +22,13 @@ class SignUp extends Component {
     let {fullName, email, userName, password} = this.state;
     axios.post("/auth/signup", {fullName, email, userName, password}).then(res => {
       console.log(res.data);
-    })
+      this.props.setUser(res.data);
+    }) 
   }
 
 
   render() {
+    console.log("global state: ", this.props);
     return (
       <div className="SignUp">
         <h1></h1>
@@ -70,7 +76,7 @@ class SignUp extends Component {
           </div>
 
         </div>
-        
+        <p>{this.props.user.username}</p>
         <div><button onClick = {this.signup}>Sign Up</button></div>
         <div><button><a href="/character">Create a character</a></button></div>
       </div>
@@ -78,4 +84,13 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+let mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+
+let mapDispactchToProps = {
+  setUser
+}
+export default connect(mapStateToProps, mapDispactchToProps)(SignUp);
